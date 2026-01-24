@@ -6,7 +6,7 @@ PASSWORD_VAULT = {}
 # welcome messages and login instructions
 puts "Welcome to Non Shall Pass - A Password Manager"
 puts "Please, sign in to continue"
-print "Enter Emial: "
+print "Enter Email: "
 
 # get input as user_email for EMAIL
 user_email=gets.chomp
