@@ -1,7 +1,7 @@
 # logging details
 EMAIL="pakaya@example.com"
 PASSWORD="Pakaya@123"
-PASSWORD_VAULT = {}
+PASSWORD_VAULT = {aws: {username: "Ubetatta", password: "Bahukpn"}}
 
 # welcome messages and login instructions
 puts "Welcome to Non Shall Pass - A Password Manager"
@@ -59,6 +59,13 @@ when "1"
 
 when "2"
   puts "This will retrieve existing service credentials"
+  print "Please enter the name of the service you wish to access credentials for: "
+  requested_service_name=gets.chomp
+  credentials=PASSWORD_VAULT[requested_service_name.to_sym]
+  puts "Here are the credentials for #{requested_service_name}: "
+  credentials.each do |key, val|
+    puts "#{key}, #{val}."
+  end
 when "3"
   puts "Exiting the program. Goodbye motherfucker!"
 else 
