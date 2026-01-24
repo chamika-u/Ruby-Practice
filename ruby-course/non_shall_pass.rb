@@ -40,6 +40,8 @@ when "1"
   puts "This will create new service credentials"
   print "Enter the name of the service: "
   new_service=gets.chomp
+  PASSWORD_VAULT[new_service]={}
+  p PASSWORD_VAULT
 when "2"
   puts "This will retrieve existing service credentials"
 when "3"
