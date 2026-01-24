@@ -25,4 +25,9 @@ unless user_password != PASSWORD
   puts "What whould you like ro do?"
   puts "1. Add service credentials"
   puts "2. Retrieve and existing service credentials"
+  puts "3. Exit"
+
+else # if password is wrong
+    puts "Invalid Password"
+    exit
 end
