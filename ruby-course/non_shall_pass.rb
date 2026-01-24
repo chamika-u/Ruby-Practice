@@ -34,6 +34,7 @@ else # if password is wrong
     exit
 end
 
+# performing user selection according to the input
 case user_selection
 when "1"
   puts "This will create new service credentials"
