@@ -3,14 +3,17 @@ EMAIL="pakaya@example.com"
 PASSWORD="Pakaya@123"
 PASSWORD_VAULT = {aws: {username: "Ubetatta", password: "Bahukpn"}}
 
-# welcome messages and login instructions
-puts "Welcome to Non Shall Pass - A Password Manager"
-puts "Please, sign in to continue"
-print "Enter Email: "
+# welcome messages
+def welcom_essage 
+  puts "Welcome to Non Shall Pass - A Password Manager"
+end
 
-# get input as user_email for EMAIL
-user_email=gets.chomp
-
+# login instructions
+def prompt_user_for_email
+  puts "Please, sign in to continue"
+  print "Enter Email: "
+  user_email=gets.chomp # get input as user_email for EMAIL
+end
 # check whether user input is corect or wrong
 if user_email==EMAIL
   print "Enter Password: "
