@@ -62,10 +62,10 @@ def handle_user_selection(user_selection)
    
 
   when "2"
-    puts "This will retrieve existing service credentials"
-   
+    
     requested_service_name=retrieve_service_name
-    credentials=PASSWORD_VAULT[requested_service_name.to_sym]
+    credentials=requested_service_name
+
     puts "Here are the credentials for #{requested_service_name}: "
     credentials.each do |key, val|
       puts "#{key}, #{val}."
