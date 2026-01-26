@@ -114,3 +114,6 @@ def exit_program
   puts "Exiting the program. Goodbye motherfucker!"
   exit
 end
+
+welcome_message
+user email=prompt_user_for_email
