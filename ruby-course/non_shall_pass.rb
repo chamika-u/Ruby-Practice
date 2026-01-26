@@ -55,24 +55,12 @@ def handle_user_selection(user_selection)
   # performing user selection according to the input
   case user_selection
   when "1"
-    # create a new service 
-    puts "This will create new service credentials"
-    print "Enter the name of the service: "
-    new_service=gets.chomp
-    PASSWORD_VAULT[new_service]={}
-    p PASSWORD_VAULT
+    new_service=set_new_service_name
+    
+    set_user_name_for(new_service)
 
-    # gets username for the created service
-    print "Enter the username for new service: "
-    new_service_user_name=gets.chomp 
-    PASSWORD_VAULT[new_service]["username"]=new_service_user_name
-    p PASSWORD_VAULT
-
-    # gets password for the created service
-    print "Enter the password for new service: "
-    new_service_password=gets.chomp
-    PASSWORD_VAULT[new_service]["password"]=new_service_password
-    p PASSWORD_VAULT
+    
+   
 
   when "2"
     puts "This will retrieve existing service credentials"
@@ -89,4 +77,18 @@ def handle_user_selection(user_selection)
     puts "Invalid Input. Please put the option number only.(Ex: 1)"
     exit
   end
+end
+
+def set_new_service_name
+  print "Enter the name of the service: "
+  new_service=gets.chomp
+  PASSWORD_VAULT[new_service.to_sym]={}
+  new_service 
+end
+
+def set_user_name_for(service)
+  print "Enter the username for new service: "
+  new_service_user_name=gets.chomp 
+  PASSWORD_VAULT[service.to_sym][:username]=new_service_user_name
+  p PASSWORD_VAULT
 end
