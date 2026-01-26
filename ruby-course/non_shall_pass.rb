@@ -14,13 +14,16 @@ def prompt_user_for_email
   print "Enter Email: "
   user_email=gets.chomp # get input as user_email for EMAIL
 end
+
 # check whether user input is corect or wrong
-if user_email==EMAIL
-  print "Enter Password: "
-  user_password=gets.chomp
-else
-  puts "Invaild Email"
-  exit
+def verify_email
+  if user_email==EMAIL
+    print "Enter Password: "
+    user_password=gets.chomp
+  else
+    puts "Invaild Email"
+    exit
+  end
 end
 
 # if password is right then these messages will display 
