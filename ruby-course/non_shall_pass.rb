@@ -62,19 +62,14 @@ def handle_user_selection(user_selection)
    
 
   when "2"
-    
     requested_service_name=retrieve_service_name
-    credentials=requested_service_name
+    credentials=retrieve_service_credentials_for(requested_service_name)
+    display_service_credentials(requested_service_name, credentials)
 
-    puts "Here are the credentials for #{requested_service_name}: "
-    credentials.each do |key, val|
-      puts "#{key}, #{val}."
-    end
   when "3"
-    puts "Exiting the program. Goodbye motherfucker!"
-  else 
-    puts "Invalid Input. Please put the option number only.(Ex: 1)"
-    exit
+    exit_program
+  else
+    puts "Invalid selection"
   end
 end
 
@@ -102,4 +97,20 @@ end
 def retrieve_service_name 
   print "Please enter the name of the service you wish to access credentials for: "
   gets.chomp
+end
+
+def retrieve_service_credentials_for(service)
+  PASSWORD_VAULT[service.to_sym]
+end
+
+def display_service_credentials(service_name, credentials)
+  puts "Here are the credentials for #{service_name}: "
+    credentials.each do |key, val|
+      puts "#{key}, #{val}."
+    end
+end
+
+def exit_program
+  puts "Exiting the program. Goodbye motherfucker!"
+  exit
 end
