@@ -86,7 +86,7 @@ def handle_user_selection(user_selection)
   when "2"
     
     requested_service_name=name_for_retrieve_service_credentials
-    credentials=retrieve_service_credentials_for(requested_service_name)
+    credentials=retrieve_service_credentials(requested_service_name)
     display_service_credentials(requested_service_name, credentials)
   
   when "3"
