@@ -18,4 +18,4 @@ I am using [Exercism's Ruby Track](https://exercism.org/tracks/ruby/exercises/) 
 - [Ruby](https://www.ruby-lang.org/en/downloads/) 3.0 or later installed on your system.
 - Bundler installed via `gem install bundler` if the exercises use Gemfile dependencies.
 
-## Running the examples
+##
